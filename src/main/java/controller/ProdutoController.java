@@ -34,7 +34,7 @@ public class ProdutoController extends HttpServlet {
         
         if (acao.equals("/produtos")) {
             
-            List<ProdutoModel> produtos = ProdutoDao.buscarTodos();// ArrayList nas buscas por padrão
+            List<ProdutoModel> produtos = ProdutoDao.buscarTodos();// ArrayList nas buscas por padrão!
             request.setAttribute("produtos", produtos);
             request.setAttribute("titulo", "Todos os Produtos");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/produtos/listar.jsp");
