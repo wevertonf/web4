@@ -29,14 +29,13 @@
             </tr>
         </table>
         <br>
-        <a href="<%= request.getContextPath() %>/listarUsuarios">Voltar para lista</a>
     <%
         } else {
     %>
         <p>Usuário não encontrado.</p>
-        <a href="<%= request.getContextPath() %>/listarUsuarios">Voltar para lista</a>
     <%
         }
     %>
+    	<a href="<%= request.getContextPath() %>/listarUsuarios">Voltar para lista</a>
 </body>
 </html>

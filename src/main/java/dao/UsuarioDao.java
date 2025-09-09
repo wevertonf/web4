@@ -108,9 +108,7 @@ public class UsuarioDao {
 
 			statement.setInt(1, id);
 			
-			//statement.executeQuery();// p/ uso do select
-			
-			ResultSet resultado = statement.executeQuery();
+			ResultSet resultado = statement.executeQuery();// p/ uso do select
 			
 			if(resultado.next()) {
 				uModel.setId(resultado.getInt("id"));

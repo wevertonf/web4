@@ -49,11 +49,13 @@ public class UsuarioController extends HttpServlet {
                         return; // Importante: return para não continuar executando
                     }
                 } catch (NumberFormatException e) {
-                    // ID inválido
+                	request.setAttribute("erro", "ID inválido!");
                 }
+            } else {
+            	request.setAttribute("erro", "ID não informado! (DETALHAR)");
             }
-            // Se não encontrou ou ID inválido
-            response.sendRedirect("listarUsuarios");
+            
+            response.sendRedirect("listarUsuarios");// Se não encontrou ou ID inválido
             return;
         }
         
@@ -71,8 +73,10 @@ public class UsuarioController extends HttpServlet {
                         return;
                     }
                 } catch (NumberFormatException e) {
-                    // ID inválido
+                	request.setAttribute("erro", "ID do usuário inválido! (EDITAR)");
                 }
+            } else {
+                request.setAttribute("erro", "ID não informado para edição!");
             }
             response.sendRedirect("listarUsuarios");
             return;
@@ -109,8 +113,7 @@ public class UsuarioController extends HttpServlet {
            
         }
         
-        // Para todas as outras ações (incluindo /listarUsuarios), mostrar a lista
-        List<UsuarioModel> listaDeUsuarios = UsuarioDao.buscar();
+        List<UsuarioModel> listaDeUsuarios = UsuarioDao.buscar();// Para todas as outras ações (incluindo /listarUsuarios)
         request.setAttribute("listaDeUsuarios", listaDeUsuarios);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("listar_usuarios.jsp");
@@ -139,8 +142,7 @@ public class UsuarioController extends HttpServlet {
                 try {
                     int id = Integer.parseInt(idParam);
                     novoUsuario.setId(id);
-                    // Para atualização, verificar se precisa atualizar a senha
-                    UsuarioModel usuarioExistente = UsuarioDao.buscarPorId(id);
+                    UsuarioModel usuarioExistente = UsuarioDao.buscarPorId(id);// Para atualização, verificar se precisa atualizar a senha
                     if (usuarioExistente != null && usuarioExistente.getId() != 0) {
                         novoUsuario.setSenha(usuarioExistente.getSenha()); // Mantém a senha existente
                     }
@@ -152,8 +154,8 @@ public class UsuarioController extends HttpServlet {
             } else {
                 mensagem = "ID não informado!";
             }
-        } else {
-            // Inserção de novo usuário
+        } else {// Inserção de novo usuário
+            
             if (senha != null && !senha.isEmpty()) {
                 String senhaCripto = SenhaUtil.hashSenha(senha);
                 novoUsuario.setSenha(senhaCripto);
