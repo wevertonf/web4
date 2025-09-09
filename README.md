@@ -161,9 +161,9 @@ POST /api/usuarios
 Content-Type: application/json
 
 {
-  "nome": "João Silva",
-  "email": "joao@email.com",
-  "senha": "senha123"
+  "nome": "Piroca da rola pinto",
+  "email": "prp@email.com",
+  "senha": "123456"
 }
 ```
 
