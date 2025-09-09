@@ -1,19 +1,19 @@
-# 🌐 Projeto Web4 - Sistema de Gerenciamento de Usuários e Produtos
+# 🌐 Web4 - CRUDagem de Usuários e Produtos
 
-Sistema web desenvolvido em Java com Servlets, JSP e MySQL para gerenciamento completo de usuários e produtos.
+Desenvolvido em Java com Servlets, JSP e MySQL para CRUDinagem de usuários e produtos.
 
 ## 🎯 Funcionalidades
 
-### 👤 Gerenciamento de Usuários
+### 👤 Usuários
 - ✅ Cadastro de novos usuários com criptografia de senha (BCrypt)
-- ✅ Autenticação e login seguro
+- ✅ Autenticação e login
 - ✅ Listagem de todos os usuários
-- ✅ Detalhamento de usuário específico
+- ✅ Detalhamento de usuário (id)
 - ✅ Edição de dados cadastrais
-- ✅ Exclusão de usuários
+- ✅ Deletagem de usuários
 
 ### 📦 Gerenciamento de Produtos
-- ✅ Cadastro de produtos associados a usuários
+- ✅ Cadastro de produtos associados aos usuários
 - ✅ Listagem de todos os produtos
 - ✅ Listagem de produtos por usuário específico
 - ✅ Detalhamento de produtos
@@ -70,10 +70,14 @@ web4/
 │   ├── WEB-INF/
 │   │   └── web.xml
 │   ├── login.jsp
-│   ├── cadastro.jsp
+│   ├── registrar.jsp
+│   ├── detalhar.jsp
+│   ├── editar.jsp
+│   ├── listar_usuarios.jsp
 │   ├── arealogada.jsp
+│   ├── resposta.jsp
 │   └── index.jsp
-└── pom.xml                             # Configuração Maven
+└──
 ```
 
 ## 🚀 Como Executar o Projeto
@@ -268,7 +272,7 @@ Produtos
 - Opção de logout
 
 ### Gerenciamento de Produtos
-- Listagem com filtros
+- Listagem com filtros (PENDENTE)
 - Formulários de cadastro/edição
 - Confirmação de exclusão
 
@@ -277,8 +281,8 @@ Produtos
 O sistema implementa tratamento completo de erros:
 - Validação de entrada de dados
 - Tratamento de exceções
-- Mensagens amigáveis ao usuário
-- Logs de erros para desenvolvedor
+- Mensagens agressivas ao usuário
+- Logs para desenvolvedor
 
 ## 📈 Próximas Melhorias
 
@@ -286,7 +290,7 @@ O sistema implementa tratamento completo de erros:
 - [ ] Sistema de busca avançada
 - [ ] Upload de imagens para produtos
 - [ ] Testes unitários automatizados
-- [ ] Documentação da API com Swagger
+- [ ] Documentação da API com Swagger (será!?)
 
 ## 👨‍💻 Desenvolvedor
 
@@ -300,9 +304,11 @@ Este projeto é desenvolvido para fins educacionais e não possui licença espec
 
 ## 🙏 Agradecimentos
 
-- Professor Ederson e colegas da disciplina de Programação Web IV
+- Professor Ederson Bastiani e colegas da disciplina de Programação Web IV
 - Comunidade de desenvolvedores Java
 - Documentação oficial das tecnologias utilizadas
+- Cristiano Ronaldo pela mentalidade de vencedor
+- Juan Pablo Vojvoda pela mentalidade de insistência e teimosia
 - Agente GPT Qwen3-Coder
 
 ## 🆘 Suporte
